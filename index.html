@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="rtl">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+
+                             <!---------------------------Start of project--------------------------------------------->
+
+        <div class="projectContinar">
+
+<!--------------------------------------------------------Head of project-------------------------------------------------------------------->
+
+            <div class="head">
+                <h2>نظام ادارة المخازن</h2>
+                <p>تصميم وبرمجة المهندس منذر عبدالكريم طيب</p>
+            </div>
+
+<!--------------------------------------------------------Input data from user--------------------------------------------------------------->
+
+            <div class="input">
+                <input type="text" id="ProductName" placeholder="اسم المنتج">
+
+                <div class="price">
+                    <input type="number" onkeyup="getTotal()" id="price" placeholder="سعر المنتج">
+                    <input type="number" onkeyup="getTotal()" id="taxes" placeholder="الضرائب المدفوعه على المنتج">
+                    <input type="number" onkeyup="getTotal()" id="ads" placeholder="اعلانات">
+                    <input type="number" onkeyup="getTotal()" id="discount" placeholder="خصومات على المنتج">
+                    <small id="total"></small>
+                </div>
+                
+                <input type="number" id="count" placeholder="عدد المنتجات">
+                <input type="text" id="category" placeholder="تصنيف المنتج">
+                <button id="addNew" onclick="addNewProducts()">اضافة منتج جديد</button>
+                
+            </div>
+
+<!--------------------------------------------------------Show data and search--------------------------------------------------------------->
+
+            <div class="output">
+                <div class="searchBlock">
+                    <input type="text" onkeyup="searchProduct(this.value)" id="search" placeholder="بحث">
+                    <div class="btnSearch">
+                        <button onclick="searchProductByMood(this.id)" id="searchTitle">بحث بالاسم</button>
+                        <button onclick="searchProductByMood(this.id)" id="searchCategory">البحث بالصنف</button>
+                    </div>
+                </div>
+
+  <!--------------------------------------------------------The table--------------------------------------------------------------->
+                <div id="deletAll"></div>
+                <table >
+                    <tr dir="rtl">
+                    <th>رقم الصنف</th>    
+                    <th>اسم الصنف </th>
+                    <th>السعر</th>
+                    <th>الضرائب</th>
+                    <th>الاعلانات</th>
+                    <th>الخصومات</th>
+                    <th>السعر الاجمالي</th>
+                    <th>نوع الصنف</th>
+                    <th>تعديل</th>
+                    <th>حذف</th>
+                    </tr>
+                    <tbody id="tbody">
+           
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
